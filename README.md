@@ -6,7 +6,7 @@ I would not advise to use this bot unless you can read the source, therefore I w
 
 Does not use your Metamask account, instead it creates a dummy one.
 
-I am not liable for anything if you choose to use this project.
+I am not liable for any damages caused if you choose to use this project.
 
 In case you want to thank me: 0x69DC33F0F9a7545Dd5B40647bFd674b8c9BF2Bc6
 
