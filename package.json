@@ -1,0 +1,25 @@
+{
+  "name": "abracadabra-money-wmemo-mim-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elertan/abracadabra-money-wmemo-mim-checker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elertan/abracadabra-money-wmemo-mim-checker/issues"
+  },
+  "homepage": "https://github.com/elertan/abracadabra-money-wmemo-mim-checker#readme",
+  "dependencies": {
+    "@chainsafe/dappeteer": "^2.2.0",
+    "node-notifier": "^10.0.0",
+    "puppeteer": "^11.0.0"
+  }
+}
