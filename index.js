@@ -20,18 +20,28 @@ const main = async () => {
         }
         await checkLoopPage.goto("https://abracadabra.money/stand");
 
+        let lastMimAmount = "0";
         for (;;) {
-            console.log('Checking for available wmemo - mims');
-            const element = await checkLoopPage.waitForSelector('div.stand-table-item:nth-of-type(3)');
+            const element = await checkLoopPage.waitForSelector('div.stand-table-item:nth-of-type(5)');
             const content = await element.evaluate(el => el.children[2].children[0].children[0].innerText);
             // const x = await element.$('p:nth-of-type(2)');
             // const content = await x.evaluate(el => el.textContent);
             console.log(content);
-            if (content !== "0") {
-                notifier.notify({
-                    title: 'Abracadabra Checker',
-                    message: 'wMEMO - MIM is now available!',
-                });
+            if (lastMimAmount !== content) {
+                lastMimAmount = content;
+                if (lastMimAmount === "0") {
+                    notifier.notify({
+                        title: 'Abracadabra Checker',
+                        message: `wMEMO - MIM is now gone`,
+                    });
+                } else {
+                    notifier.notify({
+                        title: 'Abracadabra Checker',
+                        message: `wMEMO - MIM updated! New amount (${content})`,
+                    });
+                } 
+            } else {
+                console.log("Abracadabra reported same amount of mims left");
             }
 
             await new Promise((r) => setTimeout(r, 5000));
